@@ -16,7 +16,7 @@ include 'functions.php';
 <body>
   <div class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <h1 class="navbar-brand" href="#">PHP Simple Calculator</h1>
+      <h1 class="navbar-text text-center">PHP Simple Calculator</h1>
     </div>
   </div>
 
