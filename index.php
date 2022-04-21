@@ -46,13 +46,27 @@
     </div>
   </div>
 </nav>
-  <?php
 
-  $greeting = "Hello World";
-  echo $greeting;
+
+<div class="mt-3">
+ 
+  <form action="functions.php" method="get">
+  <input type="text" name="num1" placeholder="Number 1">
+  <select name="oper">
+    <label>Choose Operation!</label>
+    <option value="add">Add</option>
+    <option value="subtract">Subtract</option>
+  </select>
+  <input type="text" name="num2" placeholder="Number 2">
+  <button type="submit">Calculate</button>
+  </form>
+
+
+</div>
+ <?php
+    include 'functions.php';
 
   ?>
-
 </body>
 
 </html>
