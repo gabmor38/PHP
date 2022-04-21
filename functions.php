@@ -1,25 +1,33 @@
 <?php
+$num1 = $_GET["num1"];
+$oper = $_GET["oper"];
+$num2 = $_GET["num2"];
+$result = 0;
 
 function myCalculator($num1, $oper, $num2) {
-  $sum=0;
-
+  
+if(is_numeric($num1) && is_numeric($num2)) {
   switch ($oper) {
     case "add";
-      $sum = $num1 + $num2;
+      $result = $num1 + $num2;
       break;
 
     case "sub";
-      $sum = $num1 - $num2;
+      $result = $num1 - $num2;
       break;
+    
+    case "multiply";
+      $result = $num1 * $num2;
+      break;
+
+    case "division";
+      $result = $num1 / $num2;
+      break;
+    }
+    return $result;
   }
-    return $sum;
+    
 }
 
-  $num1 = $_GET["num1"];
-  $oper = $_GET["oper"];
-  $num2 = $_GET["num2"];
-
-  
-  echo "Total: " . myCalculator($num1, $oper, $num2);
 
   ?>

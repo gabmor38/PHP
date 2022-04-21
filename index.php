@@ -5,68 +5,41 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PHP_Exercises</title>
+  <title>PHP_Calculator</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
+<?php
+include 'functions.php';
+
+?>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">PHP Workbook</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+  <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <h1 class="navbar-brand" href="#">PHP Simple Calculator</h1>
     </div>
   </div>
-</nav>
 
 
-<div class="mt-3">
- 
-  <form action="functions.php" method="get">
-  <input type="text" name="num1" placeholder="Number 1">
-  <select name="oper">
-    <label>Choose Operation!</label>
-    <option value="add">Add</option>
-    <option value="subtract">Subtract</option>
-  </select>
-  <input type="text" name="num2" placeholder="Number 2">
-  <button type="submit">Calculate</button>
-  </form>
+  <div class="container mt-4 card text-white bg-dark col-4">
+    <div class="card-body">
+      <form action="" method="get">
+        <input class="form-control mb-3" type="text" name="num1" placeholder="Number 1">
+        <select name="oper" class="form-select mb-3 btn-warning">
+          <label>Choose Operation!</label>
+          <option value="add">Add</option>
+          <option value="subtract">Subtract</option>
+          <option value="multiply">Multiply</option>
+          <option value="division">Division</option>
+        </select>
+        <input class="form-control mb-3"type="text" name="num2" placeholder="Number 2">
+        <button class="btn btn-info mb-3" type="submit">Calculate</button>
+        <input class="form-control mb-3" readonly="readonly" placeholder= "Total" name="result" value="<?php echo myCalculator($num1, $oper, $num2); ?>"></input>
+      </form>
 
+    </div>
+  </div>
 
-</div>
- <?php
-    include 'functions.php';
-
-  ?>
 </body>
 
 </html>
